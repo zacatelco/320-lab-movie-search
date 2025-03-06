@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Form from "./components/Form";
 import MovieDisplay from "./components/MovieDisplay";
-import.meta.env.VITE_API_KEY;
+// import.meta.env.VITE_API_KEY;
 
 function App() {
   const apiKey = import.meta.env.VITE_API_KEY;
@@ -13,7 +13,7 @@ function App() {
   const getMovie = async (searchTerm) => {
     try {
       const response = await fetch(
-        `http://www.omdbapi.com/?apikey=${apiKey}&t=${searchTerm}`
+        `https://www.omdbapi.com/?apikey=${apiKey}&t=${searchTerm}`
       );
       const data = await response.json();
       setMovie(data);
